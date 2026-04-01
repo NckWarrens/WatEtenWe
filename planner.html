@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maaltijdplanner</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="planner">
+<main class="app">
+    <header class="header">
+        <div>
+            <h1 class="title">Maaltijdplanner</h1>
+            <p class="subtitle">
+                Voeg volledige maaltijden toe, bewaar ze automatisch en laat er een aantal willekeurig kiezen.
+            </p>
+        </div>
+
+        <nav class="nav">
+            <a href="roulette.html" class="nav-link">Roulette</a>
+            <a href="planner.html" class="nav-link active">Maaltijdplanner</a>
+        </nav>
+    </header>
+
+    <section class="content planner-layout">
+        <section class="planner-panel">
+            <h2 class="panel-title">Maaltijden genereren</h2>
+            <p class="panel-text">
+                Kies hoeveel unieke maaltijden je wilt laten selecteren uit je opgeslagen lijst.
+            </p>
+
+            <div class="generator-row">
+                <label for="mealAmount">Aantal maaltijden</label>
+                <input
+                        type="number"
+                        id="mealAmount"
+                        min="1"
+                        step="1"
+                        value="7"
+                />
+                <button id="generateMealsButton" class="primary">Genereer maaltijden</button>
+            </div>
+
+            <p class="error-message" id="plannerError"></p>
+
+            <ol class="generated-meals" id="generatedMeals"></ol>
+        </section>
+
+        <section class="planner-panel">
+            <h2 class="panel-title">Maaltijden toevoegen</h2>
+            <p class="panel-text">
+                Voorbeelden: <em>Lasagna met brood</em> of <em>Schnitzel, erwtjes & patat</em>.
+            </p>
+
+            <div class="planner-input-row">
+                <input
+                        type="text"
+                        id="mealInput"
+                        placeholder="Typ een volledige maaltijd..."
+                        maxlength="120"
+                />
+                <button id="addMealButton" class="primary">Toevoegen</button>
+            </div>
+
+            <div class="planner-list-header">
+                <h3>Opgeslagen maaltijden</h3>
+                <span id="mealCount">0 maaltijden</span>
+            </div>
+
+            <ul class="meal-list" id="mealList"></ul>
+            <p class="empty-state" id="emptyMealState">Nog geen maaltijden toegevoegd.</p>
+        </section>
+    </section>
+</main>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

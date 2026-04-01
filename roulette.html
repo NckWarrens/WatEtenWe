@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maaltijd Roulette</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="roulette">
+<main class="app">
+    <header class="header">
+        <div>
+            <h1 class="title">Maaltijd Roulette</h1>
+            <p class="subtitle">
+                Geen inspiratie voor het avondeten? Schokkend. Druk op de knop en laat het lot een proteïne, koolhydraat en groente kiezen.
+            </p>
+        </div>
+
+        <nav class="nav">
+            <a href="roulette.html" class="nav-link active">Roulette</a>
+            <a href="planner.html" class="nav-link active">MaaltijdPlanner</a>
+
+        </nav>
+    </header>
+
+    <section class="content">
+        <div class="controls">
+            <button id="spinButton" class="primary">Draai de roulette</button>
+            <button id="resetButton" class="secondary">Reset</button>
+        </div>
+
+        <div class="wheels">
+            <article class="wheel-card">
+                <div class="wheel-label">Proteïne</div>
+                <div class="wheel-window">
+                    <div class="selector"></div>
+                    <ul class="wheel-list" id="proteinWheel"></ul>
+                </div>
+                <div class="status" id="proteinStatus">Klaar om te draaien</div>
+            </article>
+
+            <article class="wheel-card">
+                <div class="wheel-label">Koolhydraat</div>
+                <div class="wheel-window">
+                    <div class="selector"></div>
+                    <ul class="wheel-list" id="carbWheel"></ul>
+                </div>
+                <div class="status" id="carbStatus">Wacht op chaos</div>
+            </article>
+
+            <article class="wheel-card">
+                <div class="wheel-label">Groente</div>
+                <div class="wheel-window">
+                    <div class="selector"></div>
+                    <ul class="wheel-list" id="veggieWheel"></ul>
+                </div>
+                <div class="status" id="veggieStatus">Nog volledig besluiteloos</div>
+            </article>
+        </div>
+
+        <section class="result" aria-live="polite">
+            <div class="result-box">
+                <div class="result-label">Proteïne</div>
+                <div class="result-value" id="proteinResult">-</div>
+            </div>
+            <div class="result-box">
+                <div class="result-label">Koolhydraat</div>
+                <div class="result-value" id="carbResult">-</div>
+            </div>
+            <div class="result-box">
+                <div class="result-label">Groente</div>
+                <div class="result-value" id="veggieResult">-</div>
+            </div>
+        </section>
+
+        <div class="footer-note" id="finalMeal">
+            Je maaltijd verschijnt hier zodra de drie wielen uitgespeeld zijn.
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
